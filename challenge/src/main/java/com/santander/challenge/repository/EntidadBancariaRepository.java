@@ -13,7 +13,7 @@ import jakarta.persistence.LockModeType;
 
 public interface EntidadBancariaRepository extends JpaRepository<EntidadBancaria, UUID> {
 	
-	@Lock(LockModeType.PESSIMISTIC_WRITE)
+	//@Lock(LockModeType.PESSIMISTIC_WRITE)
     @Query("SELECT p FROM EntidadBancaria p WHERE p.id = :id")
     EntidadBancaria findByIdForUpdate(@Param("id") UUID id);
 }
